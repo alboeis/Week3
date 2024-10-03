@@ -21,3 +21,22 @@ find /home/alboeis/ncbi_dataset/data -type f -name "*.fna" -exec sh -c 'echo "$(
 
 # Question 3
 
+``` bash
+grep -E 'GCA' /home/alboeis/ncbi_dataset/data/data_summary.tsv | grep -E 'c.*c' | wc -l
+```
+> OUTPUT: 7
+
+# Question 4
+
+``` bash
+grep -E 'GCA' /home/alboeis/ncbi_dataset/data/data_summary.tsv | grep -E 'c.*c' | grep -v 'coccus' | wc -l
+```
+> OUTPUT: 5
+
+# Question 5
+
+``` bash
+find /home/alboeis/ncbi_dataset/data -type f -name "*GCA*.fna" -size +3M | wc -l
+
+```
+> OUTPUT: 3
